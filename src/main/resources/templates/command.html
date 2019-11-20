@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymelead.org">
+<head>
+<meta charset="UTF-8">
+<title>command</title>
+</head>
+<body>
+	<h1>コマンド画面</h1>
+	<form>
+		<span>職業：</span>
+		<p th:text="${session.job.jobName}"/>
+			<span>名前：</span>
+			<p th:text="${session.name}"/>
+			<input type="submit" value="戦う">
+		</form>
+</body>
+</html>
