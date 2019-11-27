@@ -6,12 +6,12 @@
 </head>
 <body>
 	<h1>コマンド画面</h1>
-	<form>
 		<span>職業：</span>
 		<p th:text="${session.job.jobName}"/>
 			<span>名前：</span>
 			<p th:text="${session.name}"/>
-			<input type="submit" value="戦う">
+			<form action="#" th:action="@{/result}" th:object="${CharacterForm}" method="GET">
+			<input type="submit" value="戦う" name="atc">
 		</form>
 </body>
 </html>

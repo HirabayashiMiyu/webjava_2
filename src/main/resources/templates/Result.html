@@ -6,7 +6,8 @@
 </head>
 <body>
 	<div>
-		<p th:text="${command}"></p>
+		<p th:text="${session.name}"></p><span>は</span>
+		<p th:text="${session.job.jobName}"></p><span>で攻撃した！</span>
 	</div>
 	<form></form>
 	</th:block>

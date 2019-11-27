@@ -37,26 +37,28 @@ public class RPGController {
     String charaJob = characterForm.getCharacter();
 
     Job job = null;
-    //Warrior warrior = new Warrior();
-    //Wizard wizard = new Wizard();
+    // if文
+    // インスタンス化してセッションに保存
+    // 確認画面にセット
     if ("戦士".equals(charaJob)) {
       job = new Warrior();
     } else if ("魔法使い".equals(charaJob)) {
       job = new Wizard();
     }
-
-    session.setAttribute("name", name);
     session.setAttribute("job", job);
-
-
-    // if文
-    // インスタンス化してセッションに保存
-    // 確認画面にセット
+    session.setAttribute("name", name);
 
     mav.setViewName("command");
     return mav;
   }
 
+  @RequestMapping(value = "/result", method = RequestMethod.GET)
+  public ModelAndView index3(ModelAndView mav, CharacterForm characterForm) {
+   Job job = (Job) session.getAttribute("job");
 
+   session.getAttribute("name");
 
+    mav.setViewName("result");
+    return mav;
+}
 }
